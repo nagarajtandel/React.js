@@ -1,0 +1,35 @@
+{
+  "name": "foodorderingapp",
+  "version": "1.0.0",
+  "description": "This is React.js",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagarajtandel/React.js.git"
+  },
+  "keywords": [
+    "react",
+    "react.js"
+  ],
+  "author": "React",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagarajtandel/React.js/issues"
+  },
+  "homepage": "https://github.com/nagarajtandel/React.js#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist":[
+    "last 2 version"
+  ]
+}
