@@ -1,18 +1,52 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const Title = () => ( 
-    <h1 className="head" tabIndex="5">
-        Namaste REACT.JS🚀
-        </h1>
-        );
-const HeadingComponent = () => ( 
-    <div id="container">    
-       <Title/>
-      <h1 className="heading">welcome React Functional Component</h1>
+import Header from "./components/Header.js";
+import Body from "./components/Body.js";
+import About from "./components/About.js";
+import Contact from "./components/Contact.js";
+import Error from "./components/Error.js";
+import RestaurantMenu from "./components/RestaurantMenu.js";
+import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
+
+const AppLayout = () => {
+  console.log(<Body/>)
+  return (
+    <div className="app">
+      <Header />
+      <Outlet />
     </div>
-);
+  );
+};
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children:[
+      {
+        path:"/",
+        element: <Body />,
+
+      },
+      {
+        path: "/about",
+        element: <About/>,
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
+    errorElement:<Error />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>);
+
+root.render(<RouterProvider router={appRouter} />);
 
 
 
@@ -78,35 +112,9 @@ root.render(<HeadingComponent/>);
 // import React from "react";
 // import ReactDOM from "react-dom/client";
 
-// const Header = () => {
-//   return (
-//     <div className="header">
-//       <div className="logo-container">
-//         <img
-//           className="logo"
-//           src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/b3e73495988751.5ea42985a318a.jpg"
-//           alt="Logo"
-//         />
-//       </div>
-//       <div className="nav-items">
-//         <ul>
-//           <li>Home</li>
-//           <li>About Us</li>
-//           <li>Contact Us</li>
-//           <li>Cart</li>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
 
-// const AppLayout = () => {
-//   return (
-//     <div className="app">
-//       <Header />
-//     </div>
-//   );
-// };
+
+
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<AppLayout />);
